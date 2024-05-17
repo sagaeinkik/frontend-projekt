@@ -9,5 +9,16 @@ body {
     margin: auto;
     width: 100%;
     overflow-x: hidden;
-    line-height: 1.8;
+    line-height: 1.5;
+}
+
+.wrapper {
+    overflow-x: hidden;
+}
+
+li {
+    list-style: none;
+    a {
+        text-decoration: none;
+    }
 }

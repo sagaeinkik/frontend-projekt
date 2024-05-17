@@ -1,0 +1,133 @@
+@use 'assets' as a;
+
+/* Styling relaterande till headern på landing page */
+
+#landingpage {
+    position: relative;
+}
+
+//Herobild
+img {
+    width: 100%;
+}
+
+//Länkar, menyer
+.headercontent {
+    //Flex, positioner, font
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    color: white;
+    font-family: a.$rubriker;
+
+    a {
+        color: white;
+    }
+    //Styla länkarna med färg vid hovring
+    nav li a {
+        @include a.transition;
+
+        &:hover {
+            color: a.$yellow;
+        }
+    }
+    /* Desktopmeny */
+    nav.desktop {
+        margin: 1em;
+        width: 40%;
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    /* Mobilmeny */
+    nav.mobile {
+        //Dölj mobilmeny från start
+        display: none;
+        //Hamburgermeny: knapp
+        button {
+            border: none;
+            background-color: rgba(0, 0, 0, 0);
+            padding: 0.3em;
+            cursor: pointer;
+            position: relative;
+            right: 2em;
+            top: 1em;
+            z-index: 1;
+
+            span.burger-bar {
+                //Gör streck
+                display: block;
+                margin: 0.4em;
+                height: 0.2em;
+                width: 2.3em;
+                background-color: white;
+                border-radius: 3px;
+                @include a.transition;
+            }
+        }
+        button.active {
+            //Rotera streck, gör mittenstreck osynligt
+            span.burger-bar:first-child {
+                transform: translateY(0.6em) rotate(405deg);
+            }
+            span.burger-bar:nth-child(2) {
+                opacity: 0;
+            }
+            span.burger-bar:last-child {
+                transform: translateY(-0.6em) rotate(-405deg);
+            }
+        }
+        ul {
+            //Styla själva menyn
+            background-color: a.$dark;
+            position: absolute;
+            right: 0;
+            //He utanför skärm
+            top: -2000%;
+            height: 100vh;
+            width: 35%;
+            min-width: 300px;
+            padding: 1em;
+            @include a.transition;
+
+            li {
+                //Positionera list items
+                height: 15vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                &:first-child {
+                    margin-top: 2em;
+                }
+            }
+        }
+        ul.active {
+            //Flytta tillbaka meny när den är active
+            top: 0;
+        }
+    }
+    //Text med Kaffekoppen
+    .companytitle {
+        text-decoration: none;
+        font-size: 2em;
+        margin: 6px 1em;
+    }
+}
+
+//Media queries
+@media (max-width: 700px) {
+    //Dölj desktopmeny
+    .headercontent nav.desktop {
+        display: none;
+    }
+    //Visa mobilmeny
+    .headercontent nav.mobile {
+        display: block;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaffekoppen</title>
+    <link rel="stylesheet" href="sass/main.scss">
+    <script src="js/burger.js" type="module"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header id="landingpage-header">
+            <picture>
+                <!-- Stor bild -->
+                <source media="(min-width: 1000px)" srcset="images/hero.png?as=avif" type="image/avif">
+                <source media="(min-width: 1000px)" srcset="images/hero.png?as=webp" type="image/webp">
+                <source media="(min-width: 1000px)" srcset="images/hero.png?as=png" type="image/png">
+                <!-- Liten bild -->
+                <source media="(max-width: 999px)" srcset="images/hero-small.png?as=avif" type="image/avif">
+                <source media="(max-width: 999px)" srcset="images/hero-small.png?as=webp" type="image/webp">
+                <source media="(max-width: 999px)" srcset="images/hero-small.png?as=png" type="image/png">
+                <img src="images/hero.png" alt="Bild ovanifrån på kaffekopp mot en mörk yta">
+            </picture>
+            <div class="headercontent">
+                <a href="index.html" class="companytitle">Kaffekoppen</a>
+                <nav class="desktop">
+                    <ul>
+                        <li><a href="#">Meny</a></li>
+                        <li><a href="#">Omdömen</a></li>
+                        <li><a href="#">Specialbeställ</a></li>
+                    </ul>
+                </nav>
+                <nav class="mobile">
+                    <div class="burgermenu">
+                        <button id="burgerbtn">
+                            <span class="burger-bar"></span>
+                            <span class="burger-bar"></span>
+                            <span class="burger-bar"></span>
+                        </button>
+                    </div> <!-- Slut på burgermenu -->
+                    <ul>
+                        <li><a href="#">Meny</a></li>
+                        <li><a href="#">Omdömen</a></li>
+                        <li><a href="#">Specialbeställ</a></li>
+                    </ul>
+                </nav>
+            </div> <!-- Slut på headercontent -->
+        </header>
+        <main>
+            <h1>Välkommen</h1>
+            <p>Här har jag introducerande text som jag inte har tänkt ut vad den ska vara ännu.</p>
+        </main>
+        <footer>
+
+        </footer>
+    </div> <!-- Slut på wrapper -->
+</body>
+
+</html>
