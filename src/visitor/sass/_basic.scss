@@ -1,0 +1,50 @@
+@use 'assets' as a;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 2300px;
+    margin: auto;
+    width: 100%;
+    overflow-x: hidden;
+    line-height: 1.7;
+    background-color: a.$beige;
+    font-family: a.$bread;
+}
+
+.wrapper {
+    overflow-x: hidden;
+}
+
+li {
+    list-style: none;
+    a {
+        text-decoration: none;
+    }
+}
+
+.text-container {
+    width: 70%;
+    margin: auto;
+
+    .text {
+        max-width: 35em;
+        margin: auto;
+        h1 {
+            font-family: a.$rubriker;
+        }
+    }
+}
+
+//Länkar som ska se ut som knappar
+a.btn-primary {
+    text-decoration: none;
+    color: white;
+    font-family: a.$rubriker;
+    background-color: a.$blue;
+    padding: 0.8em 1.5em;
+    @include a.transition;
+}

@@ -1,0 +1,95 @@
+@use 'assets' as a;
+
+//Ikon-grid
+.icon-grid {
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2em;
+    margin: 3em auto;
+
+    .icon-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .svg {
+            fill: a.$yellow;
+            width: 100%;
+            max-width: 3.5em;
+            @include a.transition;
+        }
+        a {
+            margin-top: 0.4em;
+            text-decoration: none;
+            color: a.$blue;
+        }
+
+        &:hover {
+            .svg {
+                fill: a.$blue;
+            }
+        }
+    }
+}
+
+//Bild-grid
+.image-grid {
+    background-color: a.$blue;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: a.$yellow;
+    margin-top: 80px;
+
+    img {
+        //Ta bort små utrymmen runt
+        display: block;
+    }
+
+    div.grid-item {
+        padding: 0.8em;
+        //Centrera texten
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            max-width: 35em;
+        }
+    }
+}
+
+//Cta-grid
+.cta-cards-container {
+    display: grid;
+    width: 70%;
+    margin: 4em auto 2em;
+    grid-gap: 2em;
+    grid-template-columns: 1fr 1fr;
+
+    .cta-card {
+        background-color: a.$yellow;
+        border-radius: 0 0 50px 50px;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+
+        p {
+            padding: 1em;
+            max-width: 35em;
+        }
+        a {
+            align-self: center;
+            margin: 2em;
+            font-size: 1.1em;
+
+            &:hover {
+                background-color: a.$dark;
+                color: a.$yellow;
+            }
+        }
+    }
+}
