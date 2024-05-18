@@ -7,6 +7,8 @@
     <title>Kaffekoppen</title>
     <link rel="stylesheet" href="sass/main.scss">
     <script src="js/burger.js" type="module"></script>
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/a891bda96a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -29,7 +31,7 @@
                     <ul>
                         <li><a href="#">Meny</a></li>
                         <li><a href="#">Specialbeställ</a></li>
-                        <li><a href="#">Omdömen</a></li>
+                        <li><a href="#reviews">Omdömen</a></li>
                     </ul>
                 </nav>
                 <nav class="mobile">
@@ -43,7 +45,7 @@
                     <ul>
                         <li><a href="#">Meny</a></li>
                         <li><a href="#">Specialbeställ</a></li>
-                        <li><a href="#">Omdömen</a></li>
+                        <li><a href="#reviews">Omdömen</a></li>
                     </ul>
                 </nav>
             </div> <!-- Slut på headercontent -->
@@ -255,7 +257,7 @@
                             <g id="_x30_1_chatting" />
 
                         </svg>
-                        <a href="#">Glada kunder</a>
+                        <a href="#reviews">Glada kunder</a>
                     </div> <!-- Slut på icon-item -->
                 </div> <!-- Slut på icons -->
             </div> <!-- Slut på textcontainer -->
@@ -321,6 +323,43 @@
                     <a href="#" class="btn-primary">Specialbeställ</a>
                 </div> <!-- Slut på cta-card -->
             </div> <!-- Slut på cta-cards-container -->
+            <section class="review-sctn" id="reviews">
+                <h2>Omdömen</h2>
+                <div class="reviews-container">
+                    <div class="loader"></div>
+                </div> <!-- Slut på reviews-container -->
+            </section>
+            <form>
+                <h2>Lägg till nytt omdöme</h2>
+                <span class="error"></span>
+                <div class="sidebyside">
+                    <div>
+                        <label for="name" class="blocklabel">Namn:</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div>
+                        <label for="email" class="blocklabel">Epost:</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                </div>
+                <p>Betyg:</p>
+                <div class="radios">
+
+                    <label for="1">1</label>
+                    <input type="radio" name="rating" id="1" value="1">
+                    <label for="2">2</label>
+                    <input type="radio" name="rating" id="2" value="2">
+                    <label for="3">3</label>
+                    <input type="radio" name="rating" id="3" value="3">
+                    <label for="4">4</label>
+                    <input type="radio" name="rating" id="4" value="4">
+                    <label for="5">5</label>
+                    <input type="radio" name="rating" id="5" value="5">
+                </div>
+                <label for="kommentar" class="blocklabel">Kommentar:</label>
+                <textarea name="kommentar" id="kommentar" placeholder="Skriv en kommentar..."></textarea>
+                <input type="submit" value="Skicka in">
+            </form>
         </main>
         <footer>
 

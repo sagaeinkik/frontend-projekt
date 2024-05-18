@@ -7,18 +7,19 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2em;
     margin: 3em auto;
-
+    //Ikon och text
     .icon-item {
         display: flex;
         flex-direction: column;
         align-items: center;
-
+        //Själva ikonen
         .svg {
             fill: a.$yellow;
             width: 100%;
             max-width: 3.5em;
             @include a.transition;
         }
+        //Länk
         a {
             margin-top: 0.4em;
             text-decoration: none;
@@ -46,7 +47,7 @@
         //Ta bort små utrymmen runt
         display: block;
     }
-
+    //Själva bilderna/texterna
     div.grid-item {
         padding: 0.8em;
         //Centrera texten
@@ -67,7 +68,7 @@
     margin: 4em auto 2em;
     grid-gap: 2em;
     grid-template-columns: 1fr 1fr;
-
+    //Korten
     .cta-card {
         background-color: a.$yellow;
         border-radius: 0 0 50px 50px;
@@ -76,11 +77,12 @@
         flex-direction: column;
         justify-content: space-between;
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-
+        //Informationstext
         p {
             padding: 1em;
             max-width: 35em;
         }
+        //Länk
         a {
             align-self: center;
             margin: 2em;
@@ -90,6 +92,147 @@
                 background-color: a.$dark;
                 color: a.$yellow;
             }
+        }
+    }
+}
+
+//Omdömen
+section.review-sctn {
+    h2 {
+        max-width: 35em;
+        margin: auto;
+        font-family: a.$rubriker;
+    }
+    //Blå bakgrund och horisontell scrollbar
+    .reviews-container {
+        width: 100%;
+        overflow-x: scroll;
+        background-color: a.$blue;
+        display: flex;
+        padding: 1.7em;
+        //Själva omdömet
+        .review-item {
+            min-width: 290px;
+            max-width: 35em;
+            max-height: 280px;
+            overflow-y: scroll;
+            padding: 1.3em;
+            border-right: 1px solid a.$yellow;
+            color: white;
+            //Lite luft ovanför
+            p.comment,
+            p.author,
+            p.date {
+                margin-top: 0.5em;
+            }
+            //Gör kursivt och lite mindre på författare och datum
+            p.author,
+            p.date {
+                font-style: italic;
+                font-size: 0.9em;
+            }
+            //Styla stjärnan
+            .fa-solid {
+                color: a.$yellow;
+            }
+        }
+    }
+}
+
+//Laddningsanimation
+.loader {
+    margin: 4em auto;
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid;
+    border-color: #fff #0000;
+    animation: loading 1s infinite;
+}
+@keyframes loading {
+    to {
+        transform: rotate(0.5turn);
+    }
+}
+
+//Formulär
+form {
+    width: 65%;
+    margin: 3em auto;
+    h2 {
+        font-family: a.$rubriker;
+    }
+    span.error {
+        color: red;
+        max-width: 35em;
+    }
+    //Labels
+    .blocklabel {
+        display: block;
+    }
+    label,
+    p {
+        margin-top: 1.5em;
+    }
+
+    //inputfält
+    input {
+        background-color: a.$yellow;
+        border: none;
+        padding: 0.5em 0.8em;
+        font-size: 1em;
+        font-family: a.$bread;
+    }
+    .sidebyside {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+
+        div input {
+            width: 100%;
+        }
+    }
+
+    div.radios {
+        label {
+            position: relative;
+            left: 1em;
+            top: 1em;
+        }
+        //Radioknappar
+        input[type='radio'] {
+            accent-color: a.$yellow;
+            border: none;
+            height: 1em;
+            width: 1em;
+            margin-right: 1em;
+            margin-bottom: 1em;
+        }
+    }
+    //Kommentar
+    textarea {
+        width: 100%;
+        background-color: a.$yellow;
+        font-size: 1em;
+        height: 5em;
+        border: none;
+        padding: 0.8em;
+        font-family: a.$bread;
+    }
+    //Knapp
+    input[type='submit'] {
+        margin-top: 2em;
+        font-family: a.$rubriker;
+        font-size: 1em;
+        padding: 0.8em 1em;
+        background-color: a.$blue;
+        color: white;
+        cursor: pointer;
+        @include a.transition;
+
+        &:hover {
+            background-color: a.$yellow;
+            color: a.$blue;
         }
     }
 }
