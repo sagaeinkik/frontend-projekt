@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaffekoppen</title>
     <link rel="stylesheet" href="sass/main.scss">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
     <script src="js/burger.js" type="module"></script>
+    <script src="js/reviews.js" type="module"></script>
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/a891bda96a.js" crossorigin="anonymous"></script>
 </head>
@@ -29,7 +34,7 @@
                 <a href="index.html" class="companytitle">Kaffekoppen</a>
                 <nav class="desktop">
                     <ul>
-                        <li><a href="#">Meny</a></li>
+                        <li><a href="menu.html">Meny</a></li>
                         <li><a href="#">Specialbeställ</a></li>
                         <li><a href="#reviews">Omdömen</a></li>
                     </ul>
@@ -43,7 +48,7 @@
                         </button>
                     </div> <!-- Slut på burgermenu -->
                     <ul>
-                        <li><a href="#">Meny</a></li>
+                        <li><a href="menu.html">Meny</a></li>
                         <li><a href="#">Specialbeställ</a></li>
                         <li><a href="#reviews">Omdömen</a></li>
                     </ul>
@@ -100,7 +105,7 @@
                                 </g>
                             </g>
                         </svg>
-                        <a href="#">Gott kaffe</a>
+                        <a href="menu.html">Gott kaffe</a>
                     </div> <!-- Slut på icon-item -->
                     <div class="icon-item">
                         <!-- Croissant -->
@@ -135,7 +140,7 @@
                                 </g>
                             </g>
                         </svg>
-                        <a href="#">Alltid hembakat</a>
+                        <a href="menu.html">Alltid hembakat</a>
                     </div> <!-- Slut på icon-item -->
                     <div class="icon-item">
                         <!-- Vagn med matkupol -->
@@ -308,7 +313,10 @@
                         <source srcset="images/macarons.jpg?as=jpg" type="image/jpg">
                         <img src="images/macarons.jpg" alt="Macarons, mandelkakor med smörkräm">
                     </picture>
-                    <p>Inspirerande ord om vår meny</p>
+                    <p>Från klassiska kanelbullar till vaniljsnäckor, från
+                        prinsesstårtor till räksallader, från
+                        kladdkakor och mandelkubb till en mättande smörgås. Är du hungrig, törstig, eller sötsugen? Vi
+                        har något för alla.</p>
                     <a href="#" class="btn-primary">Se meny</a>
                 </div> <!-- Slut på cta-card -->
                 <div class="cta-card">
@@ -318,8 +326,10 @@
                         <source srcset="images/cheesecake.jpg?as=jpg" type="image/jpg">
                         <img src="images/cheesecake.jpg" alt="En cheesecake med kanelstänger">
                     </picture>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt, asperiores magni? Corrupti
-                        assumenda dolor vero nulla deleniti laudantium velit quaerat.</p>
+                    <p>En födelsedag, mors och fars dag, ett avsked av en kollega, en högtid, fössta tossdan i mass, en
+                        nyexaminerad student
+                        &ndash; tillfällena är många då man vill bjuda på något extra. Hos oss kan du specialbeställa
+                        tårtor, helt efter eget tycke och smak.</p>
                     <a href="#" class="btn-primary">Specialbeställ</a>
                 </div> <!-- Slut på cta-card -->
             </div> <!-- Slut på cta-cards-container -->
@@ -359,10 +369,32 @@
                 <label for="kommentar" class="blocklabel">Kommentar:</label>
                 <textarea name="kommentar" id="kommentar" placeholder="Skriv en kommentar..."></textarea>
                 <input type="submit" value="Skicka in">
+                <span id="approved"></span>
             </form>
         </main>
         <footer>
-
+            <div class="footergrid">
+                <div class="footer-gi-1">
+                    <h2>Hitta hit</h2>
+                    <p>Bluffmakargatan 10</p>
+                    <p>83751 Åre</p>
+                    <p>Kör E14 till Åre. Parkera där det finns plats, gå till torget och in på cafét.</p>
+                    <h2>Kontakta oss</h2>
+                    <a href="mailto: bluffmail@mail.se">Maila oss</a>
+                    <p>Telefon: 0647-195 43</p>
+                    <h2>Admin</h2>
+                    <a href="login.html">Logga in</a>
+                </div> <!-- Slut på footer-gi-1 -->
+                <div class="footer-gi-2">
+                    <a href="https://www.instagram.com/sagosaurus/" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-messenger"></i></a>
+                    <a href="https://www.linkedin.com/in/saga-einarsdotter-kikajon-7b0470307/" target="_blank"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                </div> <!-- Slut på footer-gi-2 -->
+            </div> <!-- Slut på footergrid -->
+            <p id="credits">Gjord av Saga Einarsdotter Kikajon</p>
         </footer>
     </div> <!-- Slut på wrapper -->
 </body>

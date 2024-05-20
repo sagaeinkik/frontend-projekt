@@ -1,0 +1,55 @@
+@use 'assets' as a;
+
+footer {
+    width: 100%;
+    background-color: a.$dark;
+    color: white;
+
+    h2 {
+        font-family: a.$rubriker;
+    }
+    h2:not(h2:first-child) {
+        margin-top: 2em;
+    }
+
+    .footergrid {
+        display: grid;
+        width: 65%;
+        margin: auto;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+        //allmänna länkar
+        a {
+            color: white;
+            @include a.transition;
+            &:hover {
+                color: a.$yellow;
+            }
+        }
+        .footer-gi-1,
+        .footer-gi-2 {
+            margin-top: 3em;
+        }
+        .footer-gi-2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: end;
+            //Specifikt ikonerna
+            a {
+                font-size: 3.5em;
+                color: a.$yellow;
+                @include a.transition;
+                &:hover {
+                    color: a.$blue;
+                    text-shadow: 2px 2px 2px rgba(221, 176, 107, 0.9);
+                }
+            }
+        }
+    }
+    #credits {
+        text-align: center;
+        padding-top: 3em;
+        padding-bottom: 1em;
+    }
+}

@@ -1,0 +1,9 @@
+@use 'assets' as a;
+
+// Gör om headern till statisk och gör bakgrunden till blå på undersidorna
+header#otherpage .headercontent {
+    background-color: a.$blue;
+    position: static;
+}
+
+//Ja det var allt för den här filen.
