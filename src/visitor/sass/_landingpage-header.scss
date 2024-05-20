@@ -28,6 +28,7 @@ img {
     //Styla länkarna med färg vid hovring
     nav li a {
         @include a.transition;
+        font-size: 1.1em;
 
         &:hover {
             color: a.$yellow;

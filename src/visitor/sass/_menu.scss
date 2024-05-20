@@ -1,0 +1,89 @@
+@use 'assets' as a;
+
+.container {
+    width: 70%;
+    margin: auto;
+}
+
+.categories ul {
+    margin: 2em 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    button {
+        padding: 0.8em 1.4em;
+        font-size: 1em;
+        font-family: a.$rubriker;
+        border: none;
+        background-color: a.$blue;
+        color: white;
+        cursor: pointer;
+        @include a.transition;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: a.$yellow;
+            color: black;
+        }
+    }
+    button.current {
+        background-color: a.$yellow;
+        color: black;
+    }
+}
+
+img {
+    border-radius: 50%;
+    width: 40%;
+    display: block;
+    margin: 4em auto;
+}
+
+.menu {
+    h1 {
+        font-family: a.$meny;
+        text-align: center;
+        font-size: 2.5em;
+    }
+    h2 {
+        font-family: a.$meny;
+        background-color: a.$yellow;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+
+    ul {
+        margin: 0.5em 1.2em 1.2em 1.2em;
+
+        li .flex-items {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1.5px dotted a.$blue;
+            margin-top: 1.5em;
+        }
+
+        li .description {
+            font-style: italic;
+        }
+    }
+}
+
+.specific-category {
+    width: 100%;
+
+    h2 {
+        padding-left: 1em;
+    }
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    margin: 2em 0;
+
+    .grid-item h2 {
+        text-align: center;
+    }
+}
