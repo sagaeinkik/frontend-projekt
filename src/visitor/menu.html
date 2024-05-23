@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaffekoppen | meny </title>
     <link rel="stylesheet" href="sass/main.scss">
+    <!-- JS -->
     <script src="js/menu.js" type="module"></script>
+    <script src="js/burger.js" type="module"></script>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
-    <script src="js/burger.js" type="module"></script>
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/a891bda96a.js" crossorigin="anonymous"></script>
 </head>
@@ -24,7 +25,7 @@
                 <nav class="desktop">
                     <ul>
                         <li><a href="menu.html">Meny</a></li>
-                        <li><a href="#">Specialbeställ</a></li>
+                        <li><a href="orders.html">Specialbeställ</a></li>
                         <li><a href="index.html/#reviews">Omdömen</a></li>
                     </ul>
                 </nav>
@@ -38,7 +39,7 @@
                     </div> <!-- Slut på burgermenu -->
                     <ul>
                         <li><a href="menu.html">Meny</a></li>
-                        <li><a href="#">Specialbeställ</a></li>
+                        <li><a href="orders.html">Specialbeställ</a></li>
                         <li><a href="index.html/#reviews">Omdömen</a></li>
                     </ul>
                 </nav>
@@ -62,7 +63,8 @@
                     <div class="specific-category">
                     </div> <!-- Slut på specific-category  -->
                     <div class="menu-grid">
-                        <p>Sidan laddas...</p>
+                        <p>Menyn hämtas...</p>
+                        <div class="loader" id="menu-loader"></div>
                     </div> <!-- Slut på menu-grid -->
                 </section>
             </div> <!-- Slut på container -->
@@ -75,7 +77,7 @@
                     <p>83751 Åre</p>
                     <p>Kör E14 till Åre. Parkera där det finns plats, gå till torget och in på cafét.</p>
                     <h2>Kontakta oss</h2>
-                    <a href="mailto: bluffmail@mail.se">Maila oss</a>
+                    <a href="mailto:bluffmail@mail.se">Maila oss</a>
                     <p>Telefon: 0647-195 43</p>
                     <h2>Admin</h2>
                     <a href="login.html">Logga in</a>

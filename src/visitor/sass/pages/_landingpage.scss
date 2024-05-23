@@ -1,4 +1,4 @@
-@use 'assets' as a;
+@use '../assets' as a;
 
 //Ikon-grid
 .icon-grid {
@@ -137,22 +137,6 @@ section.review-sctn {
                 color: a.$yellow;
             }
         }
-    }
-}
-
-//Laddningsanimation
-.loader {
-    margin: 4em auto;
-    width: 50px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 8px solid;
-    border-color: #fff #0000;
-    animation: loading 1s infinite;
-}
-@keyframes loading {
-    to {
-        transform: rotate(0.5turn);
     }
 }
 

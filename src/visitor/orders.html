@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaffekoppen | Logga in </title>
+    <title>Kaffekoppen | Specialbeställ </title>
     <link rel="stylesheet" href="sass/main.scss">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
     <!-- JS -->
     <script src="js/burger.js" type="module"></script>
-    <script src="js/login.js" type="module"></script>
+    <script src="js/orders.js" type="module"></script>
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/a891bda96a.js" crossorigin="anonymous"></script>
 </head>
@@ -46,16 +46,27 @@
             </div> <!-- Slut på headercontent -->
         </header>
         <main>
-            <div class="container login">
-                <h1>Logga in</h1>
+            <div class="container orders">
+                <h1>Specialbeställ din tårta</h1>
+                <p>Vi skräddarsyr gärna en perfekt tårta till dina speciella tillfällen. Skicka in dina önskemål så
+                    kontaktar vi dig för att diskutera vidare.</p>
+
                 <!-- Formulär -->
-                <form id="loginform">
+                <form id="fakeform">
                     <span class="error"></span>
-                    <label for="username">Användarnamn:</label>
-                    <input type="text" name="username" id="username">
-                    <label for="password">Lösenord:</label>
-                    <input type="password" name="password" id="password">
-                    <input type="submit" value="Logga in" class="primary-btn">
+                    <label for="namn">Namn:</label>
+                    <input type="text" name="namn" id="namn">
+                    <label for="phone">Telefonnummer (frivilligt):</label>
+                    <input type="number" name="phone" id="phone">
+                    <label for="email">Epost:</label>
+                    <input type="email" name="email" id="email">
+                    <label for="desc">Beskrivning/önskemål:</label>
+                    <textarea name="desc" id="desc"></textarea>
+                    <label for="example">Har du exempelbilder att visa? Ladda upp dem här:</label>
+                    <input type="file" name="example" id="example" accept="image/*">
+                    <p>När du skickar in formuläret granskas det av en av våra medarbetare, som hör av sig med ett
+                        prisförslag.</p>
+                    <input type="submit" value="Skicka in" class="primary-btn">
                 </form>
             </div> <!-- Slut på container -->
         </main>

@@ -52,3 +52,20 @@ a.btn-primary {
     padding: 0.8em 1.5em;
     @include a.transition;
 }
+
+//Loader
+//Laddningsanimation
+.loader {
+    margin: 4em auto;
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid;
+    border-color: #fff #0000;
+    animation: loading 1s infinite;
+}
+@keyframes loading {
+    to {
+        transform: rotate(0.5turn);
+    }
+}

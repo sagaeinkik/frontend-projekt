@@ -1,0 +1,50 @@
+@use '../assets' as a;
+
+.orders {
+    h1 {
+        font-family: a.$rubriker;
+        margin-top: 1em;
+    }
+    p {
+        max-width: 35em;
+    }
+}
+
+#fakeform {
+    width: 100%;
+
+    input {
+        display: block;
+        width: 100%;
+    }
+
+    input[type='file'] {
+        //Bakgrundsfärg
+        background-color: rgba(0, 0, 0, 0);
+
+        //Styla själva knappen
+        &::file-selector-button {
+            background-color: a.$blue;
+            border: none;
+            padding: 0.5em 1.2em;
+            font-size: 1em;
+            color: white;
+            font-family: a.$rubriker;
+            cursor: pointer;
+            @include a.transition;
+
+            &:hover {
+                background-color: a.$yellow;
+                color: a.$blue;
+            }
+        }
+    }
+    input[type='submit'] {
+        width: fit-content;
+    }
+
+    label {
+        display: block;
+        margin-top: 2em;
+    }
+}

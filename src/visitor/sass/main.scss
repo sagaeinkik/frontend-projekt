@@ -1,6 +1,8 @@
 @use 'basic';
-@use 'landingpage-header';
-@use 'landingpage';
-@use 'footer';
-@use 'underpage-header';
-@use 'menu';
+@use 'pages/landingpage';
+@use 'pages/menu';
+@use 'pages/orders';
+@use 'components/landingpage-header';
+@use 'components/footer';
+@use 'components/underpage-header';
+@use 'pages/login';

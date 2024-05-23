@@ -1,4 +1,4 @@
-@use 'assets' as a;
+@use '../assets' as a;
 
 .container {
     width: 70%;
@@ -86,4 +86,10 @@ img.menupic {
     .grid-item h2 {
         text-align: center;
     }
+}
+
+//Loader
+#menu-loader {
+    border-color: a.$blue #0000;
+    margin: 4em 0;
 }
