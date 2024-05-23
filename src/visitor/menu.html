@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaffekoppen | meny </title>
     <link rel="stylesheet" href="sass/main.scss">
+    <script src="js/menu.js" type="module"></script>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
@@ -24,7 +25,7 @@
                     <ul>
                         <li><a href="menu.html">Meny</a></li>
                         <li><a href="#">Specialbeställ</a></li>
-                        <li><a href="#reviews">Omdömen</a></li>
+                        <li><a href="index.html/#reviews">Omdömen</a></li>
                     </ul>
                 </nav>
                 <nav class="mobile">
@@ -38,7 +39,7 @@
                     <ul>
                         <li><a href="menu.html">Meny</a></li>
                         <li><a href="#">Specialbeställ</a></li>
-                        <li><a href="#reviews">Omdömen</a></li>
+                        <li><a href="index.html/#reviews">Omdömen</a></li>
                     </ul>
                 </nav>
             </div> <!-- Slut på headercontent -->
@@ -47,132 +48,21 @@
             <div class="container">
                 <div class="categories">
                     <ul>
-                        <li><button class="current">Varma drycker</button></li>
-                        <li><button>Kalla drycker</button></li>
-                        <li><button>Sallader</button></li>
-                        <li><button>Mackor</button></li>
-                        <li><button>Tårtor</button></li>
-                        <li><button>Bakelser</button></li>
-                        <li><button>Kakor</button></li>
                     </ul>
                 </div> <!-- Slut på categories -->
                 <picture>
                     <source srcset="images/coffeecup2.jpg?as=avif" type="image/avif">
                     <source srcset="images/coffeecup2.jpg?as=webp" type="image/webp">
                     <source srcset="images/coffeecup2.jpg?as=jpg" type="image/jpg">
-                    <img src="images/coffeecup2.jpg" alt="Kaffekopp sedd ovanifrån, prydd med typ kanel">
+                    <img src="images/coffeecup2.jpg" alt="Kaffekopp sedd ovanifrån, prydd med typ kanel"
+                        class="menupic">
                 </picture>
                 <section class="menu">
                     <h1>Meny</h1>
                     <div class="specific-category">
-                        <h2>Varma drycker</h2>
-                        <ul>
-                            <li>
-                                <div class="flex-items"><span class="prod-name">Vanlig kaffe</span><span
-                                        class="price">20kr</span></div>
-                                <p class="description">En helt vanlig kaffejävel Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. Facere, iure.</p>
-                            </li>
-                            <li>
-                                <div class="flex-items"><span class="prod-name">Vanlig kaffe</span><span
-                                        class="price">20kr</span></div>
-                                <p class="description">En helt vanlig kaffejävel Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. Facere, iure.</p>
-                            </li>
-                            <li>
-                                <div class="flex-items"><span class="prod-name">Vanlig kaffe</span><span
-                                        class="price">20kr</span></div>
-                                <p class="description">En helt vanlig kaffejävel Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. Facere, iure.</p>
-                            </li>
-                            <li>
-                                <div class="flex-items"><span class="prod-name">Vanlig kaffe</span><span
-                                        class="price">20kr</span></div>
-                                <p class="description">En helt vanlig kaffejävel Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. Facere, iure.</p>
-                            </li>
-
-                        </ul>
                     </div> <!-- Slut på specific-category  -->
                     <div class="menu-grid">
-                        <div class="grid-item">
-                            <h2>Varma drycker</h2>
-                            <ul>
-                                <li>
-                                    <div class="flex-items"><span class="prod-name">Vanlig kaffe</span><span
-                                            class="price">20kr</span></div>
-                                    <p class="description">En helt vanlig kaffejävel Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Facere, iure.</p>
-                                </li>
-                                <li>
-                                    <div class="flex-items"><span class="prod-name">Vanlig kaffe</span><span
-                                            class="price">20kr</span></div>
-                                    <p class="description">En helt vanlig kaffejävel Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Facere, iure.</p>
-                                </li>
-                                <li>
-                                    <div class="flex-items"><span class="prod-name">Vanlig kaffe</span><span
-                                            class="price">20kr</span></div>
-                                    <p class="description">En helt vanlig kaffejävel Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Facere, iure.</p>
-                                </li>
-                                <li>
-                                    <div class="flex-items"><span class="prod-name">Vanlig kaffe</span><span
-                                            class="price">20kr</span></div>
-                                    <p class="description">En helt vanlig kaffejävel Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Facere, iure.</p>
-                                </li>
-
-                            </ul>
-                        </div> <!-- Slut på grid-item -->
-                        <div class="grid-item">
-                            <h2>Varma drycker</h2>
-                            <ul>
-                                <li>
-                                    <div class="flex-items"><span class="prod-name">Vanlig kaffe</span><span
-                                            class="price">20kr</span></div>
-                                    <p class="description">En helt vanlig kaffejävel Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Facere, iure.</p>
-                                </li>
-                                <li>
-                                    <div class="flex-items"><span class="prod-name">Vanlig kaffe</span><span
-                                            class="price">20kr</span></div>
-                                    <p class="description">En helt vanlig kaffejävel Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Facere, iure.</p>
-                                </li>
-
-                            </ul>
-                        </div> <!-- Slut på grid-item -->
-                        <div class="grid-item">
-                            <h2>Varma drycker</h2>
-                            <ul>
-                                <li>
-                                    <div class="flex-items"><span class="prod-name">Vanlig kaffe</span><span
-                                            class="price">20kr</span></div>
-                                    <p class="description">En helt vanlig kaffejävel Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Facere, iure.</p>
-                                </li>
-                                <li>
-                                    <div class="flex-items"><span class="prod-name">Vanlig kaffe</span><span
-                                            class="price">20kr</span></div>
-                                    <p class="description">En helt vanlig kaffejävel Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Facere, iure.</p>
-                                </li>
-                                <li>
-                                    <div class="flex-items"><span class="prod-name">Vanlig kaffe</span><span
-                                            class="price">20kr</span></div>
-                                    <p class="description">En helt vanlig kaffejävel Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Facere, iure.</p>
-                                </li>
-                                <li>
-                                    <div class="flex-items"><span class="prod-name">Vanlig kaffe</span><span
-                                            class="price">20kr</span></div>
-                                    <p class="description">En helt vanlig kaffejävel Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Facere, iure.</p>
-                                </li>
-
-                            </ul>
-                        </div> <!-- Slut på grid-item -->
+                        <p>Sidan laddas...</p>
                     </div> <!-- Slut på menu-grid -->
                 </section>
             </div> <!-- Slut på container -->
