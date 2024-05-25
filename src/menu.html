@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaffekoppen | Logga in </title>
-    <link rel="stylesheet" href="sass/main.scss">
+    <title>Kaffekoppen | meny </title>
+    <link rel="stylesheet" href="sass/visitor-main.scss">
+    <!-- JS -->
+    <script src="js/visitor/menu.js" type="module"></script>
+    <script src="js/visitor/burger.js" type="module"></script>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
-    <!-- JS -->
-    <script src="js/burger.js" type="module"></script>
-    <script src="js/login.js" type="module"></script>
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/a891bda96a.js" crossorigin="anonymous"></script>
 </head>
@@ -25,7 +25,7 @@
                 <nav class="desktop">
                     <ul>
                         <li><a href="menu.html">Meny</a></li>
-                        <li><a href="#">Specialbeställ</a></li>
+                        <li><a href="orders.html">Specialbeställ</a></li>
                         <li><a href="index.html/#reviews">Omdömen</a></li>
                     </ul>
                 </nav>
@@ -39,24 +39,34 @@
                     </div> <!-- Slut på burgermenu -->
                     <ul>
                         <li><a href="menu.html">Meny</a></li>
-                        <li><a href="#">Specialbeställ</a></li>
+                        <li><a href="orders.html">Specialbeställ</a></li>
                         <li><a href="index.html/#reviews">Omdömen</a></li>
                     </ul>
                 </nav>
             </div> <!-- Slut på headercontent -->
         </header>
         <main>
-            <div class="container login">
-                <h1>Logga in</h1>
-                <!-- Formulär -->
-                <form id="loginform">
-                    <span class="error"></span>
-                    <label for="username">Användarnamn:</label>
-                    <input type="text" name="username" id="username">
-                    <label for="password">Lösenord:</label>
-                    <input type="password" name="password" id="password">
-                    <input type="submit" value="Logga in" class="primary-btn">
-                </form>
+            <div class="container">
+                <div class="categories">
+                    <ul>
+                    </ul>
+                </div> <!-- Slut på categories -->
+                <picture>
+                    <source srcset="images/coffeecup2.jpg?as=avif" type="image/avif">
+                    <source srcset="images/coffeecup2.jpg?as=webp" type="image/webp">
+                    <source srcset="images/coffeecup2.jpg?as=jpg" type="image/jpg">
+                    <img src="images/coffeecup2.jpg" alt="Kaffekopp sedd ovanifrån, prydd med typ kanel"
+                        class="menupic">
+                </picture>
+                <section class="menu">
+                    <h1>Meny</h1>
+                    <div class="specific-category">
+                    </div> <!-- Slut på specific-category  -->
+                    <div class="menu-grid">
+                        <p>Menyn hämtas...</p>
+                        <div class="loader" id="menu-loader"></div>
+                    </div> <!-- Slut på menu-grid -->
+                </section>
             </div> <!-- Slut på container -->
         </main>
         <footer>
@@ -70,7 +80,7 @@
                     <a href="mailto:bluffmail@mail.se">Maila oss</a>
                     <p>Telefon: 0647-195 43</p>
                     <h2>Admin</h2>
-                    <a href="login.html">Logga in</a>
+                    <a href="user.html">Anställda</a>
                 </div> <!-- Slut på footer-gi-1 -->
                 <div class="footer-gi-2">
                     <a href="https://www.instagram.com/sagosaurus/" target="_blank"><i

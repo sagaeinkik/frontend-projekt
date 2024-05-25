@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaffekoppen | meny </title>
-    <link rel="stylesheet" href="sass/main.scss">
-    <!-- JS -->
-    <script src="js/menu.js" type="module"></script>
-    <script src="js/burger.js" type="module"></script>
+    <title>Kaffekoppen | Specialbeställ </title>
+    <link rel="stylesheet" href="sass/visitor-main.scss">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+    <!-- JS -->
+    <script src="js/visitor/burger.js" type="module"></script>
+    <script src="js/visitor/orders.js" type="module"></script>
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/a891bda96a.js" crossorigin="anonymous"></script>
 </head>
@@ -25,7 +25,7 @@
                 <nav class="desktop">
                     <ul>
                         <li><a href="menu.html">Meny</a></li>
-                        <li><a href="orders.html">Specialbeställ</a></li>
+                        <li><a href="#">Specialbeställ</a></li>
                         <li><a href="index.html/#reviews">Omdömen</a></li>
                     </ul>
                 </nav>
@@ -39,34 +39,35 @@
                     </div> <!-- Slut på burgermenu -->
                     <ul>
                         <li><a href="menu.html">Meny</a></li>
-                        <li><a href="orders.html">Specialbeställ</a></li>
+                        <li><a href="#">Specialbeställ</a></li>
                         <li><a href="index.html/#reviews">Omdömen</a></li>
                     </ul>
                 </nav>
             </div> <!-- Slut på headercontent -->
         </header>
         <main>
-            <div class="container">
-                <div class="categories">
-                    <ul>
-                    </ul>
-                </div> <!-- Slut på categories -->
-                <picture>
-                    <source srcset="images/coffeecup2.jpg?as=avif" type="image/avif">
-                    <source srcset="images/coffeecup2.jpg?as=webp" type="image/webp">
-                    <source srcset="images/coffeecup2.jpg?as=jpg" type="image/jpg">
-                    <img src="images/coffeecup2.jpg" alt="Kaffekopp sedd ovanifrån, prydd med typ kanel"
-                        class="menupic">
-                </picture>
-                <section class="menu">
-                    <h1>Meny</h1>
-                    <div class="specific-category">
-                    </div> <!-- Slut på specific-category  -->
-                    <div class="menu-grid">
-                        <p>Menyn hämtas...</p>
-                        <div class="loader" id="menu-loader"></div>
-                    </div> <!-- Slut på menu-grid -->
-                </section>
+            <div class="container orders">
+                <h1>Specialbeställ din tårta</h1>
+                <p>Vi skräddarsyr gärna en perfekt tårta till dina speciella tillfällen. Skicka in dina önskemål så
+                    kontaktar vi dig för att diskutera vidare.</p>
+
+                <!-- Formulär -->
+                <form id="fakeform">
+                    <span class="error"></span>
+                    <label for="namn">Namn:</label>
+                    <input type="text" name="namn" id="namn">
+                    <label for="phone">Telefonnummer (frivilligt):</label>
+                    <input type="number" name="phone" id="phone">
+                    <label for="email">Epost:</label>
+                    <input type="email" name="email" id="email">
+                    <label for="desc">Beskrivning/önskemål:</label>
+                    <textarea name="desc" id="desc"></textarea>
+                    <label for="example">Har du exempelbilder att visa? Ladda upp dem här:</label>
+                    <input type="file" name="example" id="example" accept="image/*">
+                    <p>När du skickar in formuläret granskas det av en av våra medarbetare, som hör av sig med ett
+                        prisförslag.</p>
+                    <input type="submit" value="Skicka in" class="primary-btn">
+                </form>
             </div> <!-- Slut på container -->
         </main>
         <footer>
@@ -80,7 +81,7 @@
                     <a href="mailto:bluffmail@mail.se">Maila oss</a>
                     <p>Telefon: 0647-195 43</p>
                     <h2>Admin</h2>
-                    <a href="login.html">Logga in</a>
+                    <a href="user.html">Anställda</a>
                 </div> <!-- Slut på footer-gi-1 -->
                 <div class="footer-gi-2">
                     <a href="https://www.instagram.com/sagosaurus/" target="_blank"><i
