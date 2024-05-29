@@ -11,7 +11,6 @@ loginForm.addEventListener('submit', (e) => {
 });
 
 async function loginUser() {
-    console.log('loginUser() kallad');
     //Nollställ error
     errorSpan.innerText = '';
     loginButton.innerText = 'Logga in';

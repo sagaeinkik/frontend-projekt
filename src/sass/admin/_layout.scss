@@ -3,3 +3,256 @@
 body {
     background-color: white;
 }
+
+div.title-flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: a.$blue;
+    padding: 1em;
+    color: white;
+    font-family: a.$rubriker;
+
+    a {
+        color: white;
+        align-self: center;
+        margin-right: 1em;
+        @include a.transition;
+        &:hover {
+            color: a.$yellow;
+        }
+    }
+    p.title {
+        font-size: 2em;
+    }
+}
+
+nav {
+    background-color: a.$yellow;
+
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 0.65em;
+
+        li a {
+            color: black;
+
+            &:hover {
+                text-decoration: 2px dotted underline;
+            }
+        }
+    }
+}
+
+main {
+    width: 70%;
+    margin: auto;
+}
+
+h1,
+h2 {
+    font-family: a.$rubriker;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 2em;
+}
+p.inloggad {
+    text-align: center;
+}
+
+section {
+    margin-top: 3em;
+}
+
+section.log {
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0px;
+
+        th {
+            text-align: left;
+            font-weight: normal;
+            background-color: a.$blue;
+            color: white;
+            padding: 0.5em;
+        }
+        td {
+            padding: 0.5em;
+        }
+        tr {
+            border-bottom: 1px solid black;
+        }
+    }
+}
+
+section.menu {
+    p.menutitle {
+        background-color: a.$blue;
+        color: white;
+        padding: 0.5em;
+    }
+
+    article {
+        border-bottom: 1px solid black;
+        padding: 0.8em 0.5em;
+        display: flex;
+        justify-content: space-between;
+
+        div.controls {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            button {
+                font-size: 0.9em;
+                padding: 0.6em 1.3em;
+                border: none;
+                color: white;
+                background-color: a.$blue;
+
+                &:hover {
+                    background-color: darken(a.$blue, 15%);
+                }
+            }
+            button:nth-child(2) {
+                background-color: a.$yellow;
+                color: black;
+
+                &:hover {
+                    background-color: darken(a.$yellow, 10%);
+                }
+            }
+        }
+    }
+}
+form {
+    margin-top: 2em;
+
+    span.error {
+        color: red;
+    }
+    span.added {
+        color: green;
+    }
+
+    label {
+        display: block;
+        margin-top: 1em;
+    }
+    input,
+    textarea,
+    select {
+        width: 100%;
+        font-size: 1em;
+        font-family: a.$bread;
+        padding: 0.5em;
+        margin-bottom: 2em;
+        border: none;
+        border-bottom: 1px solid black;
+    }
+    input[type='submit'] {
+        border-bottom: 0px;
+        width: fit-content;
+        padding: 0.8em 1.2em;
+        background-color: a.$blue;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken(a.$blue, 15%);
+        }
+    }
+}
+
+#add-new {
+    background-color: a.$blue;
+    padding: 0.5em 0.8em;
+    font-size: 1em;
+    font-family: a.$bread;
+    color: white;
+    margin-top: 1em;
+
+    &:hover {
+        background-color: darken(a.$blue, 15%);
+    }
+}
+
+#add-menu,
+#change-menu {
+    display: none;
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+
+    article {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5em;
+
+        p {
+            margin-top: 0.5em;
+        }
+
+        div.controls {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1em;
+
+            button {
+                border: none;
+                padding: 0.5em;
+                font-size: 1.1em;
+                background-color: a.$blue;
+                color: white;
+
+                &:hover {
+                    background-color: darken(a.$blue, 15%);
+                }
+            }
+            button.remove {
+                background-color: a.$yellow;
+                color: black;
+
+                &:hover {
+                    background-color: darken(a.$yellow, 10%);
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: a.$yellow;
+    padding: 1em;
+    margin-top: 4em;
+
+    div.footerlink {
+        max-width: 35em;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            font-size: 3em;
+            color: a.$blue;
+        }
+    }
+    p {
+        text-align: center;
+        margin-top: 1em;
+    }
+}
+
+.loader {
+    border-color: a.$blue #0000;
+}

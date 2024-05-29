@@ -15,12 +15,10 @@ function checkUser() {
     const tokenCookie = getCookie('jwt=');
     //Om inte cookie finns, skicka till inloggningssidan
     if (!tokenCookie) {
-        console.log('Ingen token, omdirigerar');
         if (window.location.pathname !== '/login.html') {
             window.location.href = '/login.html';
         }
     } else {
-        console.log('Token hittad');
         if (window.location.pathname !== '/user.html') {
             window.location.href = '/user.html';
         }

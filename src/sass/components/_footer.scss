@@ -21,6 +21,7 @@ footer {
         //allmänna länkar
         a {
             color: white;
+            text-decoration: 2px dotted underline;
             @include a.transition;
             &:hover {
                 color: a.$yellow;

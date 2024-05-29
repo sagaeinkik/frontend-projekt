@@ -7,8 +7,12 @@
     <title>Kaffekoppen | admin</title>
     <!-- JS -->
     <script src="js/admin/tokenCheck.js" type="module"></script>
+    <script src="js/admin/cafemanager.js" type="module"></script>
+    <script src="js/admin/manageMenu.js" type="module"></script>
     <!-- Scss -->
     <link rel="stylesheet" href="sass/admin/admin-main.scss">
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/a891bda96a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -16,19 +20,19 @@
         <header>
             <div class="title-flex">
                 <p class="title">Kaffekoppen</p>
-                <a href="index.html">Logga ut</a>
+                <a href="index.html" id="logout">Logga ut</a>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Hantera meny</a></li>
-                    <li><a href="#">Granska omdömen</a></li>
-                    <li><a href="#">Lägg till användare</a></li>
+                    <li><a href="#menu">Hantera meny</a></li>
+                    <li><a href="#reviews">Granska omdömen</a></li>
+                    <li><a href="#add-user">Lägg till användare</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <h1>Café Manager</h1>
-            <p class="inloggad">Inloggad som (användarnamn)</p>
+            <p class="inloggad"></p>
 
             <section class="log">
                 <h2>Loggbok</h2>
@@ -40,100 +44,94 @@
                         <th>Utförd av</th>
                         <th>Datum</th>
                     </tr>
-                    <tr>
-                        <td>Reviews</td>
-                        <td>8213901283901</td>
-                        <td>Review approved</td>
-                        <td>admin</td>
-                        <td>2024-04-04</td>
-                    </tr>
-                    <tr>
-                        <td>Reviews</td>
-                        <td>8213901283901</td>
-                        <td>Review approved</td>
-                        <td>admin</td>
-                        <td>2024-04-04</td>
-                    </tr>
-                    <tr>
-                        <td>Reviews</td>
-                        <td>8213901283901</td>
-                        <td>Review approved</td>
-                        <td>admin</td>
-                        <td>2024-04-04</td>
-                    </tr>
-                    <tr>
-                        <td>Reviews</td>
-                        <td>8213901283901</td>
-                        <td>Review approved</td>
-                        <td>admin</td>
-                        <td>2024-04-04</td>
-                    </tr>
-                    <tr>
-                        <td>Reviews</td>
-                        <td>8213901283901</td>
-                        <td>Review approved</td>
-                        <td>admin</td>
-                        <td>2024-04-04</td>
-                    </tr>
                 </table>
+                <p id="nodata"></p>
             </section> <!-- Slut på section.log -->
-            <section class="menu">
+            <section class="menu" id="menu">
                 <h2>Meny</h2>
                 <p class="menutitle">Alla menyartiklar</p>
                 <div class="menu-list">
-                    <article>
-                        <div class="info">
-                            <p class="title">Artikelnamn</p>
-                            <p class="category">Kategori</p>
-                            <p class="desc">Eventuell beskrivning</p>
-                            <p class="price">Pris</p>
-                        </div> <!-- Slut på div.info -->
-                        <div class="controls">
-                            <button class="edit">Ändra</button>
-                            <button class="delete">Radera</button>
-                        </div> <!-- Slut på div.controls -->
-                    </article>
-                    <article>
-                        <div class="info">
-                            <p class="title">Artikelnamn</p>
-                            <p class="category">Kategori</p>
-                            <p class="desc">Eventuell beskrivning</p>
-                            <p class="price">Pris</p>
-                        </div> <!-- Slut på div.info -->
-                        <div class="controls">
-                            <button class="edit">Ändra</button>
-                            <button class="delete">Radera</button>
-                        </div> <!-- Slut på div.controls -->
-                    </article>
-                    <article>
-                        <div class="info">
-                            <p class="title">Artikelnamn</p>
-                            <p class="category">Kategori</p>
-                            <p class="desc">Eventuell beskrivning</p>
-                            <p class="price">Pris</p>
-                        </div> <!-- Slut på div.info -->
-                        <div class="controls">
-                            <button class="edit">Ändra</button>
-                            <button class="delete">Radera</button>
-                        </div> <!-- Slut på div.controls -->
-                    </article>
-                    <article>
-                        <div class="info">
-                            <p class="title">Artikelnamn</p>
-                            <p class="category">Kategori</p>
-                            <p class="desc">Eventuell beskrivning</p>
-                            <p class="price">Pris</p>
-                        </div> <!-- Slut på div.info -->
-                        <div class="controls">
-                            <button class="edit">Ändra</button>
-                            <button class="delete">Radera</button>
-                        </div> <!-- Slut på div.controls -->
-                    </article>
+                    <div class="loader"></div>
                 </div> <!-- Slut på div.menu-list -->
+                <button id="add-new">+ Lägg till ny</button>
+                <form id="add-menu">
+                    <h2>Lägg till ny produkt</h2>
+                    <span class="error" id="add-error"></span>
+                    <label for="name">Produktnamn:</label>
+                    <input type="text" name="name" id="name">
+                    <label for="category">Kategori: </label>
+                    <select name="category" id="category">
+                        <option value="" disabled selected>Vänligen välj i listan</option>
+                        <option value="hot-bev">Varma drycker</option>
+                        <option value="cold-bev">Kalla drycker</option>
+                        <option value="pastries">Bakelser</option>
+                        <option value="cookies">Kakor</option>
+                        <option value="cakes">Tårtor</option>
+                        <option value="salads">Sallader</option>
+                        <option value="sandwiches">Mackor</option>
+                        <option value="bread">Bröd</option>
+                        <option value="others">Övrigt</option>
+                    </select>
+                    <label for="description">Beskrivning: (max 250 tecken)</label>
+                    <textarea name="description" id="description"></textarea>
+                    <label for="price">Pris:</label>
+                    <input type="number" name="price" id="price">
+                    <input type="submit" value="Lägg till" id="submit-new">
+                </form>
+                <form id="change-menu">
+                    <h2>Ändra produkt</h2>
+                    <span class="error"></span>
+                    <label for="changename">Produktnamn:</label>
+                    <input type="text" name="name" id="changename">
+                    <label for="changecategory">Kategori: </label>
+                    <select name="category" id="changecategory">
+                        <option value="" disabled selected>Vänligen välj i listan</option>
+                        <option value="hot-bev">Varma drycker</option>
+                        <option value="cold-bev">Kalla drycker</option>
+                        <option value="pastries">Bakelser</option>
+                        <option value="cookies">Kakor</option>
+                        <option value="cakes">Tårtor</option>
+                        <option value="salads">Sallader</option>
+                        <option value="sandwiches">Mackor</option>
+                        <option value="bread">Bröd</option>
+                        <option value="others">Övrigt</option>
+                    </select>
+                    <label for="changedescription">Beskrivning: (max 250 tecken)</label>
+                    <textarea name="description" id="changedescription"></textarea>
+                    <label for="changeprice">Pris:</label>
+                    <input type="number" name="price" id="changeprice">
+                    <input type="submit" value="Spara ändringar" id="submit-change">
+                </form>
             </section> <!-- Slut på section.menu -->
+            <section class="reviews" id="reviews">
+                <h2>Omdömen att publicera</h2>
+                <div class="review-grid">
+                    <div class="loader"></div>
+                </div> <!-- Slut på div.review-grid -->
+            </section> <!-- Slut på section.reviews -->
+            <section class="add-user" id="add-user">
+                <h2>Lägg till användare</h2>
+                <p>Du kan lägga till en ny medarbetare. <br> Observera att samtliga anställa med ett konto får tillgång
+                    till att påverka databasen.</p>
+                <form>
+                    <span class="error" id="add-user-error"></span>
+                    <label for="username">Användarnamn:</label>
+                    <input type="text" name="username" id="username">
+                    <label for="email">Epost:</label>
+                    <input type="email" name="email" id="email">
+                    <label for="password">Lösenord:</label>
+                    <input type="password" name="password" id="password">
+                    <input type="submit" value="Lägg till">
+                </form>
+            </section> <!-- slut på section.add-user -->
         </main>
         <footer>
-
+            <div class="footerlink">
+                <a href="https://instagram.com/sagosaurus" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/saga-einarsdotter-kikajon-7b0470307/" target="_blank"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <p>Skapad av Saga Einarsdotter Kikajon </p>
         </footer>
     </div> <!-- Slut på wrapper -->
 </body>

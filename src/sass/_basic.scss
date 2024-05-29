@@ -25,9 +25,9 @@ body {
 
 li {
     list-style: none;
-    a {
-        text-decoration: none;
-    }
+}
+a {
+    text-decoration: none;
 }
 
 .text-container {
@@ -51,6 +51,10 @@ a.btn-primary {
     background-color: a.$blue;
     padding: 0.8em 1.5em;
     @include a.transition;
+}
+
+button {
+    cursor: pointer;
 }
 
 //Loader
