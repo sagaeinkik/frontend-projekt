@@ -1,5 +1,7 @@
 'use strict';
 
+/* EVENT LISTENERS */
+
 //Fäll ut lägg till-formulär när man trycker på knappen
 const addNewBtn = document.getElementById('add-new');
 addNewBtn.addEventListener('click', (e) => {
@@ -62,6 +64,9 @@ function getCookie(cookieName) {
     }
 }
 
+//Token från cookie, används i anrop
+const jwt = getCookie('jwt=');
+
 /* FETCHANROP */
 
 //Gör fetch till products
@@ -76,6 +81,140 @@ async function fetchProducts() {
         console.log('Något gick fel vid fetch get /products: ' + error);
     }
 }
+
+//Funktion för att lägga till ny produkt
+async function addProduct() {
+    //Errorspan
+    let errorSpan = document.getElementById('add-error');
+    //URL
+    let url = 'https://projectapi-nn6a.onrender.com/products';
+    //Värdena
+    let name = document.getElementById('name').value;
+    let category = document.getElementById('category').value;
+    let description = document.getElementById('description').value;
+    let price = document.getElementById('price').value;
+
+    //Validera
+    if (!validateInput(name, category, price, errorSpan)) {
+        return;
+    }
+
+    //Nytt objekt
+    let newProduct = {
+        name: name,
+        category: category,
+        price: price,
+    };
+    //Kolla om beskrivning finns; isåfall, lägg till
+    if (description) {
+        newProduct.description = description;
+    }
+
+    //Gör fetch-anrop
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'content-type': 'Application/json', Authorization: `Bearer ${jwt}` },
+            body: JSON.stringify(newProduct),
+        });
+        //Om allt gick bra töm fält och skriv till skärm
+        if (response.ok) {
+            document.getElementById('name').value = '';
+            document.getElementById('category').value = '';
+            document.getElementById('description').value = '';
+            document.getElementById('price').value = '';
+
+            errorSpan.classList.remove('error');
+            errorSpan.classList.add('added');
+            errorSpan.innerText = 'Produkten tillagd!';
+        }
+    } catch (error) {
+        console.log('Något gick fel vid post /products: ' + error);
+        errorSpan.innerText = error;
+    }
+}
+
+//Uppdatera produkten i databasen
+async function updateProduct() {
+    //Errorspan
+    let errorSpan2 = document.getElementById('change-error');
+    //Fäll ut formulär
+    const changeForm = document.getElementById('change-menu');
+    //Hämta produktens ID
+    const productId = changeForm.dataset.productId;
+
+    //Nya värden
+    let newName = document.getElementById('changename').value;
+    let newCategory = document.getElementById('changecategory').value;
+    let newDescription = document.getElementById('changedescription').value;
+    let newPrice = document.getElementById('changeprice').value;
+
+    // Validera input
+    if (!validateInput(newName, newCategory, newPrice, errorSpan2)) {
+        return;
+    }
+
+    //Objekt med nya värden
+    let changedProduct = {
+        name: newName,
+        category: newCategory,
+        price: newPrice,
+    };
+    if (newDescription.length < 1) {
+        changedProduct.description = newDescription;
+    } else {
+        //Ta bort egenskapen helt om det är en tom sträng
+        delete changedProduct.description;
+    }
+
+    //URL
+    let url = 'https://projectapi-nn6a.onrender.com/products/' + productId;
+
+    // Gör fetchanrop för PUT
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'Application/json', Authorization: `Bearer ${jwt}` },
+            body: JSON.stringify(changedProduct),
+        });
+        //Om ok, töm fält och skriv till skärm
+        if (response.ok) {
+            document.getElementById('changename').value = '';
+            document.getElementById('changecategory').value = '';
+            document.getElementById('changedescription').value = '';
+            document.getElementById('changeprice').value = '';
+
+            errorSpan2.classList.remove('error');
+            errorSpan2.classList.add('added');
+            errorSpan2.innerText = 'Produkten ändrad!';
+        }
+    } catch (error) {
+        console.log('Något gick fel vid PUT /products: ' + error);
+        errorSpan2.innerText = error;
+    }
+}
+
+//Ta bort produkter
+async function deleteProduct(product) {
+    const productId = product._id;
+    let url = 'https://projectapi-nn6a.onrender.com/products/' + productId;
+
+    //Försök ta bort
+    try {
+        const response = await fetch(url, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'Application/json', Authorization: `Bearer ${jwt}` },
+        });
+        const result = await response.json();
+        console.log(result);
+        //ladda om sidan för att menyn ska uppdatears
+        location.reload();
+    } catch (error) {
+        console.log('Något gick fel vid Delete products/id: ' + error);
+    }
+}
+
+/* DOM-MANIPULERANDE FUNKTIONER */
 
 //Skriv ut produkter till skärmen
 function printProducts(data) {
@@ -176,60 +315,6 @@ function printProducts(data) {
     });
 }
 
-//Funktion för att lägga till ny produkt
-async function addProduct() {
-    //Errorspan
-    let errorSpan = document.getElementById('add-error');
-    //URL
-    let url = 'https://projectapi-nn6a.onrender.com/products';
-    //token från cookie
-    const jwt = getCookie('jwt=');
-    //Värdena
-    let name = document.getElementById('name').value;
-    let category = document.getElementById('category').value;
-    let description = document.getElementById('description').value;
-    let price = document.getElementById('price').value;
-
-    //Validera
-    if (!validateInput(name, category, price, errorSpan)) {
-        return;
-    }
-
-    //Nytt objekt
-    let newProduct = {
-        name: name,
-        category: category,
-        price: price,
-    };
-    //Kolla om beskrivning finns; isåfall, lägg till
-    if (description) {
-        newProduct.description = description;
-    }
-
-    //Gör fetch-anrop
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: { 'content-type': 'Application/json', Authorization: `Bearer ${jwt}` },
-            body: JSON.stringify(newProduct),
-        });
-        //Om allt gick bra töm fält och skriv till skärm
-        if (response.ok) {
-            document.getElementById('name').value = '';
-            document.getElementById('category').value = '';
-            document.getElementById('description').value = '';
-            document.getElementById('price').value = '';
-
-            errorSpan.classList.remove('error');
-            errorSpan.classList.add('added');
-            errorSpan.innerText = 'Produkten tillagd!';
-        }
-    } catch (error) {
-        console.log('Något gick fel vid post /products: ' + error);
-        errorSpan.innerText = error;
-    }
-}
-
 //Funktion för att fylla i produktens värden
 function editProduct(product) {
     let errorSpan = document.getElementById('change-error');
@@ -250,66 +335,4 @@ function editProduct(product) {
 
     // Spara produktens id i formuläret eller som en global variabel
     changeForm.dataset.productId = product._id;
-}
-
-//Uppdatera produkten i databasen
-async function updateProduct() {
-    //Errorspan
-    let errorSpan2 = document.getElementById('change-error');
-    //Fäll ut formulär
-    const changeForm = document.getElementById('change-menu');
-    //Hämta produktens ID
-    const productId = changeForm.dataset.productId;
-
-    //Nya värden
-    let newName = document.getElementById('changename').value;
-    let newCategory = document.getElementById('changecategory').value;
-    let newDescription = document.getElementById('changedescription').value;
-    let newPrice = document.getElementById('changeprice').value;
-
-    // Validera input
-    if (!validateInput(newName, newCategory, newPrice, errorSpan2)) {
-        return;
-    }
-
-    //Objekt med nya värden
-    let changedProduct = {
-        name: newName,
-        category: newCategory,
-        price: newPrice,
-    };
-    if (newDescription.length < 1) {
-        changedProduct.description = newDescription;
-    } else {
-        //Ta bort egenskapen helt om det är en tom sträng
-        delete changedProduct.description;
-    }
-
-    // Token från cookie
-    const jwt = getCookie('jwt=');
-    //URL
-    let url = 'https://projectapi-nn6a.onrender.com/products/' + productId;
-
-    // Gör fetchanrop för PUT
-    try {
-        const response = await fetch(url, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'Application/json', Authorization: `Bearer ${jwt}` },
-            body: JSON.stringify(changedProduct),
-        });
-        //Om ok, töm fält och skriv till skärm
-        if (response.ok) {
-            document.getElementById('changename').value = '';
-            document.getElementById('changecategory').value = '';
-            document.getElementById('changedescription').value = '';
-            document.getElementById('changeprice').value = '';
-
-            errorSpan2.classList.remove('error');
-            errorSpan2.classList.add('added');
-            errorSpan2.innerText = 'Produkten ändrad!';
-        }
-    } catch (error) {
-        console.log('Något gick fel vid PUT /products: ' + error);
-        errorSpan2.innerText = error;
-    }
 }
