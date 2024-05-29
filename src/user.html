@@ -10,6 +10,7 @@
     <script src="js/admin/cafeManager.js" type="module"></script>
     <script src="js/admin/manageMenu.js" type="module"></script>
     <script src="js/admin/reviewManager.js" type="module"></script>
+    <script src="js/admin/addUser.js" type="module"></script>
     <!-- Scss -->
     <link rel="stylesheet" href="sass/admin/admin-main.scss">
     <!-- Font awesome -->
@@ -114,7 +115,7 @@
                 <h2>Lägg till användare</h2>
                 <p>Du kan lägga till en ny medarbetare. <br> Observera att samtliga anställa med ett konto får tillgång
                     till att påverka databasen.</p>
-                <form>
+                <form id="user-form">
                     <span class="error" id="add-user-error"></span>
                     <label for="username">Användarnamn:</label>
                     <input type="text" name="username" id="username">
@@ -122,7 +123,7 @@
                     <input type="email" name="email" id="email">
                     <label for="password">Lösenord:</label>
                     <input type="password" name="password" id="password">
-                    <input type="submit" value="Lägg till">
+                    <input type="submit" value="Lägg till" id="submit-add">
                 </form>
             </section> <!-- slut på section.add-user -->
         </main>
