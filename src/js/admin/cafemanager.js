@@ -42,7 +42,7 @@ async function getLog() {
 //Funktion som skriver ut loggen
 function printLog(data) {
     //Tabell
-    const table = document.querySelector('table');
+    const table = document.querySelector('tbody');
 
     if (!data || data.length < 1) {
         const noDataP = document.getElementById('nodata');
@@ -93,8 +93,8 @@ function formatDate(datum) {
     let dayOf = fullDate.getDate().toString().padStart(2, '0');
 
     //tid:
-    let hour = fullDate.getHours();
-    let minute = fullDate.getMinutes();
+    let hour = fullDate.getHours().toString().padStart(2, '0');
+    let minute = fullDate.getMinutes().toString().padStart(2, '0');
     //Returnera så som det ska vara formatterat
     return `${year}-${month}-${dayOf} kl ${hour}:${minute}`;
 }

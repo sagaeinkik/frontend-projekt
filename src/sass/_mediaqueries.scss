@@ -1,0 +1,143 @@
+@use 'assets' as a;
+
+@media (max-width: 1200px) {
+    /* LANDING PAGE */
+
+    section.review-sctn h2 {
+        max-width: fit-content;
+        margin: auto;
+    }
+
+    /* MENY */
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 845px) {
+    /* LANDING PAGE */
+    .text-container {
+        width: 95%;
+    }
+    .image-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'bild1 text1' 'text2 bild2' 'bild3 text3';
+        //Grid items-ordning
+        #gi1 {
+            grid-area: bild1;
+        }
+        #gi2 {
+            grid-area: text1;
+        }
+        #gi3 {
+            grid-area: bild2;
+        }
+        #gi4 {
+            grid-area: text2;
+        }
+        #gi5 {
+            grid-area: bild3;
+        }
+        #gi6 {
+            grid-area: text3;
+        }
+    }
+
+    //Bredda cta-container
+    .cta-cards-container {
+        width: 95%;
+        grid-gap: 1em;
+    }
+    //Bredda formulär
+    form {
+        width: 95%;
+    }
+    //bredda content i footer
+    footer .footergrid {
+        width: 90%;
+    }
+
+    /* MENY */
+    .categories ul {
+        justify-content: center;
+    }
+    //Gör om menu-grid
+    .menu-grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 560px) {
+    /* LANDING PAGE */
+
+    //Bredda icon-grid
+    .icon-grid {
+        grid-gap: 1em;
+    }
+    .icon-grid .icon-item a {
+        font-size: 0.8em;
+    }
+
+    //gör om .image-grid
+    .image-grid {
+        display: flex;
+        flex-direction: column;
+        background-color: a.$beige;
+        .grid-item {
+            background-color: a.$blue;
+        }
+        #gi2,
+        #gi4,
+        #gi6 {
+            margin-bottom: 2em;
+            padding-bottom: 2em;
+        }
+    }
+    //Gör om cta-container till flex
+    .cta-cards-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    //Gör om div.sidebyside (formulär)
+    form .sidebyside {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* MENY */
+}
+
+@media (max-width: 330px) {
+    /* LANDING PAGE */
+    //Gör companytitle mindre
+    .headercontent .companytitle {
+        font-size: 1.3em;
+    }
+
+    //Justera hamburgarposition
+    .headercontent nav.mobile button {
+        top: 0.2em;
+        right: 0.2em;
+    }
+    //Gör om icon grid
+    .icon-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    //Gör om footergrid
+    footer .footergrid {
+        display: flex;
+        flex-direction: column;
+
+        .footer-gi-2 {
+            flex-direction: row;
+            flex-wrap: wrap;
+            //Gör ikoner mindre
+            a {
+                font-size: 1.8em;
+            }
+        }
+    }
+}
