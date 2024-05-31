@@ -149,6 +149,7 @@ form {
         margin: auto;
         font-family: a.$rubriker;
     }
+    //error-meddelanden
     span.error {
         color: red;
         max-width: 35em;
@@ -170,6 +171,7 @@ form {
         font-size: 1em;
         font-family: a.$bread;
     }
+    //de fält som ska visas bredvid varandra
     .sidebyside {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -179,7 +181,6 @@ form {
             width: 100%;
         }
     }
-
     div.radios {
         label {
             position: relative;

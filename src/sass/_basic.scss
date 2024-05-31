@@ -3,12 +3,14 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Nollställning */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Maxbredd, färg, linjehöjd, font osv */
 body {
     max-width: 2500px;
     margin: auto;
@@ -19,10 +21,12 @@ body {
     font-family: a.$bread;
 }
 
+/* Overflow-x på .wrappern för att förhindra strul med hamburgermeny */
 .wrapper {
     overflow-x: hidden;
 }
 
+//Bort med listpunkter
 li {
     list-style: none;
 }
@@ -30,6 +34,7 @@ a {
     text-decoration: none;
 }
 
+//Fast bredd på text container
 .text-container {
     width: 70%;
     margin: auto;
@@ -58,7 +63,6 @@ button {
 }
 
 //Loader
-//Laddningsanimation
 .loader {
     margin: 4em auto;
     width: 50px;
@@ -68,6 +72,7 @@ button {
     border-color: #fff #0000;
     animation: loading 1s infinite;
 }
+//animation
 @keyframes loading {
     to {
         transform: rotate(0.5turn);

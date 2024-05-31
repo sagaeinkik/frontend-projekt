@@ -1,10 +1,12 @@
 @use '../assets' as a;
 
+//Maxbredd
 .container {
     width: 70%;
     margin: auto;
 }
 
+//Knappar med kategorier för sortering
 .categories ul {
     margin: 2em 0;
     display: flex;
@@ -13,6 +15,7 @@
     gap: 1em;
     justify-content: space-between;
 
+    //styla knapparna
     button {
         padding: 0.8em 1.4em;
         font-size: 1em;
@@ -29,12 +32,14 @@
             color: black;
         }
     }
+    //Nuvarande kategori markerad
     button.current {
         background-color: a.$yellow;
         color: black;
     }
 }
 
+//Bilden
 img.menupic {
     border-radius: 50%;
     width: 40%;
@@ -42,6 +47,7 @@ img.menupic {
     margin: 4em auto;
 }
 
+//Allt menyinnehåll
 .menu {
     h1 {
         font-family: a.$meny;
@@ -54,23 +60,24 @@ img.menupic {
         border-top: 1px solid black;
         border-bottom: 1px solid black;
     }
-
+    //Listan som är kategorin
     ul {
         margin: 0.5em 1.2em 1.2em 1.2em;
-
+        //Li får display flex
         li .flex-items {
             display: flex;
             justify-content: space-between;
             border-bottom: 1.5px dotted a.$blue;
             margin-top: 1.5em;
         }
-
+        //Beskrivningen finstilas
         li .description {
             font-style: italic;
         }
     }
 }
 
+//Utvald kategori
 .specific-category {
     width: 100%;
 
@@ -79,6 +86,7 @@ img.menupic {
     }
 }
 
+//Grid för de olika kategorierna
 .menu-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -90,7 +98,7 @@ img.menupic {
     }
 }
 
-//Loader
+//Loader färg och placering
 #menu-loader {
     border-color: a.$blue #0000;
     margin: 4em 0;

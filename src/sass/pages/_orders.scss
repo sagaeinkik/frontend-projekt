@@ -1,5 +1,6 @@
 @use '../assets' as a;
 
+//Container för fadderullan
 .orders {
     h1 {
         font-family: a.$rubriker;
@@ -10,15 +11,17 @@
     }
 }
 
+//Formulär
 #fakeform {
     width: 100%;
     max-width: 1300px;
 
+    //Inputfält
     input {
         display: block;
         width: 100%;
     }
-
+    //Specifikt fil
     input[type='file'] {
         //Bakgrundsfärg
         background-color: rgba(0, 0, 0, 0);
@@ -40,6 +43,7 @@
             }
         }
     }
+    //Skicka in-knapp
     input[type='submit'] {
         width: fit-content;
     }

@@ -1,9 +1,11 @@
 @use '../assets' as a;
 
+//Ändra bakgrundsfärg från beige
 body {
     background-color: white;
 }
 
+//Gör flex av företagstitel och logga ut-knapp
 div.title-flex {
     display: flex;
     width: 100%;
@@ -12,7 +14,7 @@ div.title-flex {
     padding: 1em;
     color: white;
     font-family: a.$rubriker;
-
+    //Styla länk
     a {
         color: white;
         align-self: center;
@@ -22,14 +24,16 @@ div.title-flex {
             color: a.$yellow;
         }
     }
+    //Styla företagstitel
     p.title {
         font-size: 2em;
     }
 }
 
+//Navigeringsmeny
 nav {
     background-color: a.$yellow;
-
+    //styla lista
     ul {
         display: flex;
         justify-content: space-evenly;
@@ -45,11 +49,13 @@ nav {
     }
 }
 
+//Bredd
 main {
     width: 70%;
     margin: auto;
 }
 
+//Rubriker
 h1,
 h2 {
     font-family: a.$rubriker;
@@ -59,15 +65,18 @@ h1 {
     text-align: center;
     margin-top: 2em;
 }
+//Vem man är inloggad som
 p.inloggad {
     text-align: center;
 }
-
+//Luft ovantill sektioner
 section {
     margin-top: 3em;
 }
 
+//Loggbok
 section.log {
+    //Tabell
     table {
         width: 100%;
         border-collapse: collapse;
@@ -89,19 +98,21 @@ section.log {
     }
 }
 
+//Meny-lista
 section.menu {
     p.menutitle {
         background-color: a.$blue;
         color: white;
         padding: 0.5em;
     }
-
+    //Individuella artiklar
     article {
         border-bottom: 1px solid black;
         padding: 0.8em 0.5em;
         display: flex;
         justify-content: space-between;
         gap: 1em;
+        //Knappar för radera/ändra
         div.controls {
             display: flex;
             flex-direction: column;
@@ -118,6 +129,7 @@ section.menu {
                     background-color: darken(a.$blue, 15%);
                 }
             }
+            //Egen färg på andra knappen
             button:nth-child(2) {
                 background-color: a.$yellow;
                 color: black;
@@ -129,12 +141,15 @@ section.menu {
         }
     }
 }
+
+//Formulär
 form {
     margin-top: 2em;
-
+    //Styling för error
     span.error {
         color: red;
     }
+    //Styling för godkänt
     span.added {
         color: green;
     }
@@ -143,6 +158,7 @@ form {
         display: block;
         margin-top: 1em;
     }
+    //styla fält
     input,
     textarea,
     select {
@@ -154,6 +170,7 @@ form {
         border: none;
         border-bottom: 1px solid black;
     }
+    //styla skicka in-knapp
     input[type='submit'] {
         border-bottom: 0px;
         width: fit-content;
@@ -168,6 +185,7 @@ form {
     }
 }
 
+//Formuläret för att lägga till ny produkt
 #add-new {
     background-color: a.$blue;
     padding: 0.5em 0.8em;
@@ -181,33 +199,35 @@ form {
     }
 }
 
+//Dölj formulär
 #add-menu,
 #change-menu {
     display: none;
 }
 
+//Omdömen som väntar på granskning
 .review-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1em;
-
+    //Individuella omdömen
     article {
         border: 1px solid black;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 0.5em;
-
+        //Texten
         p {
             margin-top: 0.5em;
         }
-
+        //Godkänn/ta bort-knappar
         div.controls {
             width: 100%;
             display: flex;
             justify-content: space-between;
             margin-top: 1em;
-
+            //Knapparna
             button {
                 border: none;
                 padding: 0.5em;
@@ -219,6 +239,7 @@ form {
                     background-color: darken(a.$blue, 15%);
                 }
             }
+            //Ta bort-knappen får egen styling
             button.remove {
                 background-color: a.$yellow;
                 color: black;
@@ -231,11 +252,12 @@ form {
     }
 }
 
+//Footer
 footer {
     background-color: a.$yellow;
     padding: 1em;
     margin-top: 4em;
-
+    //Ikonerna
     div.footerlink {
         max-width: 35em;
         margin: auto;
@@ -253,6 +275,7 @@ footer {
     }
 }
 
+//Bör ej behöva användas men ifall ifall
 .loader {
     border-color: a.$blue #0000;
 }
