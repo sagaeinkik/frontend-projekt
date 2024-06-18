@@ -26,3 +26,5 @@ Med mer tid hade det varit lämpligt att lägga till begränsningar på använda
 Webbtjänsten har också funktionalitet för att plocka ut specifika produkter baserat på titel och kategori, men i webbplatsen som konsumerar webbtjänsten har istället JavaScript används för att sortera, eftersom det innebär färre HTTP-anrop.
 
 Jag har medvetet valt att inte ge användaren möjlighet att ta bort redan publicerade omdömen. Syftet med det är att företag inte ska ta bort negativa omdömen bara för att de är negativa. Möjligheten att ta bort ett omdöme finns vid granskning, och då är det tänkt att man bara tar bort ett omdöme om det är uppenbart spam, fake eller skadligt på något vis.
+
+Formuläret för att specialbeställa tårtor är bara ett koncept och har ingen bakomliggande funktionalitet.
